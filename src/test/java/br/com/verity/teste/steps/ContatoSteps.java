@@ -24,12 +24,12 @@ public class ContatoSteps extends BasePage {
     }
 
     @Quando("eu clicar na opção de menu Contato")
-    public void eu_clicar_na_opção_de_menu_contato() {
+    public void eu_clicar_na_opção_de_menu_contato(){
         homePage.clickLinkContato();
     }
 
     @Quando("preencher os campos Nome Completo {string}, Empresa {string}, Email {string}, Fone {string} e Mensagem {string}")
-    public void preencher_os_campos_nome_completo_empresa_email_fone_e_mensagem(String nome, String empresa, String email, String fone, String mensagem) {
+    public void preencher_os_campos_nome_completo_empresa_email_fone_e_mensagem(String nome, String empresa, String email, String fone, String mensagem) throws InterruptedException {
         contatoPage.inserirDadosDeContato(nome, empresa, email, fone, mensagem);
     }
 
@@ -39,7 +39,7 @@ public class ContatoSteps extends BasePage {
     }
 
     @Então("o site irá registrar o envio apresentando uma mensagem de sucesso {string}")
-    public void o_site_irá_registrar_o_envio_apresentando_uma_mensagem_de_sucesso(String string) {
+    public void o_site_irá_registrar_o_envio_apresentando_uma_mensagem_de_sucesso(String string) throws InterruptedException {
         contatoPage.validarMensagemDeSucesso();
     }
 
